@@ -9,5 +9,6 @@ public class BreakableObstacleClass : ObstacleClass
         health -= damage;
         if (health <= 0)
             OnDespawn();
+        Debug.Log(health);
     }
 }

@@ -46,11 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext ctx)
     {
-        Debug.Log("attackCalled");
 
         if (ctx.performed)
         {
-        if (Physics.BoxCast(attackCenter.position,new Vector3(.25f,.25f,.25f),attackCenter.forward,out RaycastHit hit, Quaternion.Euler(0,0,0),.5f,obstacles,QueryTriggerInteraction.Collide) && ctx.performed)
+        Debug.Log("attackCalled");
+        if (Physics.BoxCast(attackCenter.position,new Vector3(.5f,.5f,1f),attackCenter.forward,out RaycastHit hit, Quaternion.Euler(0,0,0),1f,obstacles,QueryTriggerInteraction.Collide) && ctx.performed)
         {
         Debug.Log("BoxcastSucceeded");
 

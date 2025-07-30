@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public PlayerUI playerUI;
     public int maxHealth;
     [SerializeField]private int currentHealth;
 
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        playerUI.LoseHeart(currentHealth + 1);
         if (currentHealth <= 0)
             Destroy(gameObject);
     }
@@ -29,5 +31,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth += healing;
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
+        playerUI.WinHealth(currentHealth);
     }
 }
